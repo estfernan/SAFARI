@@ -15,6 +15,9 @@ rc.plot(x, type = c("binary", "segments"), publication = FALSE, ...)
 
 \item{...}{additional graphical parameters passed to \code{\link[lattice]{levelplot}}.}
 }
+\value{
+No return value, called for side effects i.e. plotting.
+}
 \description{
 Plot a reconstructed image obtained from various types of modalities.
 }

@@ -32,6 +32,8 @@
 #' @param publication a logical value, whether to create a figure without key nor scales.
 #' @param ...         additional graphical parameters passed to \code{\link[lattice]{levelplot}}.
 #'
+#' @return No return value, called for side effects i.e. plotting.
+#'
 #' @seealso
 #' \code{\link{binary.segmentation}} for more information on reconstructed images.
 #'
