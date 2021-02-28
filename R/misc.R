@@ -208,7 +208,7 @@ arctan2 <- function(v)
 #'
 is.binary <- function(img)
 {
-    length(unique(img)) <= 2
+    length(unique(c(img))) <= 2
 }
 
 #' Empty Image
