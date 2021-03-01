@@ -19,6 +19,14 @@ users to segment regions of interest and extract quantitative shape
 descriptors in AI-reconstructed images, especially those produced from
 medical imaging modalities.
 
+## Installation
+
+You may install the latest released version on CRAN by
+
+``` r
+install.packages("SAFARI")
+```
+
 ## Development
 
 The latest version of the package is under development at
