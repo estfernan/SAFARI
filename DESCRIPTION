@@ -1,6 +1,6 @@
 Package: SAFARI
 Title: Shape Analysis for AI-Reconstructed Images
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
     person(given = "Esteban",
            family = "Fernandez Morales",
