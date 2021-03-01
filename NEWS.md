@@ -1,6 +1,8 @@
 # SAFARI 0.1.1
 
-* Fixed issue with binary image check.
+## Bug fixes
+
+* Fixed issue with binary image check for `read.image` function.
 
 # SAFARI 0.1.0
 
