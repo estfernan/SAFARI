@@ -51,7 +51,9 @@ BiocManager::install("EBImage")
 ## Get Started
 
 Examples are provided for the main functions. One may get started from
-those examples and the function documentation.
+those examples and the function documentation. We also provide a
+command-line tool for applications in the terminal and an online tool
+available at <https://lce.biohpc.swmed.edu/safari/>.
 
 ``` r
 library(SAFARI)
@@ -60,9 +62,6 @@ library(SAFARI)
 ?compute.features     # feature extraction for an individual ROI
 ?rc.plot              # visualize binary or segmented images
 ```
-
-We also provide a command-line tool for applications in the terminal and
-an online tool available at <https://lce.biohpc.swmed.edu/safari/>.
 
 ## License
 
