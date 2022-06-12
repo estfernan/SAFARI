@@ -75,10 +75,10 @@ read.image <- function(file, invert = FALSE)
         }
     }
 
-    # binary image check
+    # binary image check - change all non-zero values in image matrix to 1
     if (!is.binary(img))
     {
-        stop("image in 'file' is non-binary")
+        img[img != 0] <- 1
     }
 
     # empty matrix check
