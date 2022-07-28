@@ -21,10 +21,10 @@
 #'
 #' This function reads a reconstructed binary image, possibly, produced from an
 #' X-Ray, CT scan, MRI, etc. and processed by standard image processing
-#' algorithms. The image is then preprocessed to facilitate the procedure in
+#' algorithms. The image is then pre-processed to facilitate the procedure in
 #' the \code{\link{binary.segmentation}} function.
 #'
-#' The binary image is preprocessed as follows:
+#' The binary image is pre-processed as follows:
 #' \itemize{
 #'     \item Check if image contains multiple color channels, non-binary, or empty.
 #'     \item Invert black and white colors (optional).
@@ -37,7 +37,7 @@
 #' @param invert a logical value that indicates if the B/W colors should be inverted.
 #' @param expand.border an integer value that specifies how much to expand the image's border by.
 #'
-#' @return An integer matrix that represents the preprocessed image.
+#' @return An integer matrix that represents the pre-processed image.
 #'
 #' @seealso
 #' \code{\link{binary.segmentation}} for more information on reconstructed binary images.
@@ -47,13 +47,15 @@
 #' @importFrom png readPNG
 #' @importFrom tools file_ext
 #'
-read.image <- function(file, invert = FALSE)
+read.image <- function(file, invert = FALSE, expand.border = 5)
 {
     # error message for loading image
     msg <- "image in 'file' could not be read : extension not supported"
 
     # errors or warning messages for processing image
     conv <- "image in 'file' is non-binary : non-zero entries changed to ones"
+    mty <- "image in 'file' appears to be empty : values sum to zero"
+
     # attempt to load image, base on file extension
     ext <- tolower(file_ext(file))
     img <- switch(ext,
@@ -87,10 +89,12 @@ read.image <- function(file, invert = FALSE)
         warning(conv)
     }
 
+    empty.flag <- is.empty(img)
+
     # empty matrix check
-    if (is.empty(img))
+    if (empty.flag)
     {
-        stop("image in 'file' appears to be empty")
+        stop(mty)
     }
 
     # invert black and white
@@ -99,14 +103,14 @@ read.image <- function(file, invert = FALSE)
         img <- !img
     }
 
-    # image preprocessing
-    img[img > 0] <- 1              # ensure image is binary
     # expand image border
     if (expand.border > 0)
     {
         img <- image.border(img, 0, 5)
     }
 
+    # image pre-processing
+    img[img > 0] <- 1
 
     # rotate image
     if (ext != "rdata")

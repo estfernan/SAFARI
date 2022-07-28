@@ -4,24 +4,26 @@
 \alias{read.image}
 \title{Read a Binary Image}
 \usage{
-read.image(file, invert = FALSE)
+read.image(file, invert = FALSE, expand.border = 5)
 }
 \arguments{
 \item{file}{a character string that specifies the image to read.}
 
 \item{invert}{a logical value that indicates if the B/W colors should be inverted.}
+
+\item{expand.border}{an integer value that specifies how much to expand the image's border by.}
 }
 \value{
-An integer matrix that represents the preprocessed image.
+An integer matrix that represents the pre-processed image.
 }
 \description{
 This function reads a reconstructed binary image, possibly, produced from an
 X-Ray, CT scan, MRI, etc. and processed by standard image processing
-algorithms. The image is then preprocessed to facilitate the procedure in
+algorithms. The image is then pre-processed to facilitate the procedure in
 the \code{\link{binary.segmentation}} function.
 }
 \details{
-The binary image is preprocessed as follows:
+The binary image is pre-processed as follows:
 \itemize{
 \item Check if image contains multiple color channels, non-binary, or empty.
 \item Invert black and white colors (optional).
