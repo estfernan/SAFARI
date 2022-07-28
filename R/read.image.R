@@ -35,6 +35,7 @@
 #'
 #' @param file a character string that specifies the image to read.
 #' @param invert a logical value that indicates if the B/W colors should be inverted.
+#' @param expand.border an integer value that specifies how much to expand the image's border by.
 #'
 #' @return An integer matrix that represents the preprocessed image.
 #'
@@ -100,7 +101,12 @@ read.image <- function(file, invert = FALSE)
 
     # image preprocessing
     img[img > 0] <- 1              # ensure image is binary
-    img <- image.border(img, 0, 5) # expand image border
+    # expand image border
+    if (expand.border > 0)
+    {
+        img <- image.border(img, 0, 5)
+    }
+
 
     # rotate image
     if (ext != "rdata")
