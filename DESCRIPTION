@@ -3,9 +3,9 @@ Title: Shape Analysis for AI-Reconstructed Images
 Version: 0.1.1
 Authors@R: c(
     person(given = "Esteban",
-           family = "Fernandez Morales",
+           family = "Fernandez",
            role = c("aut", "cre"),
-           email = "esteban.fernandezmorales@utdallas.edu"),
+           email = "esteban_fernandez@brown.edu"),
     person(given = "Qiwei",
            family = "Li",
            role = c("aut"),
@@ -31,4 +31,4 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/estfernandez/SAFARI
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.1
