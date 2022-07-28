@@ -244,3 +244,13 @@ re.map <- function(x, old, new)
 {
     matrix(new[match(x, old)], nrow = nrow(x), ncol = ncol(x))
 }
+
+#' Convers an Image to a Binary Format
+#'
+#' @keywords internal utilities
+#' @noRd
+#'
+convert.to.binary <- function(img, value = 0)
+{
+    img[img != value] <- 1
+}

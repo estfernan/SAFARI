@@ -51,6 +51,8 @@ read.image <- function(file, invert = FALSE)
     # error message for loading image
     msg <- "image in 'file' could not be read : extension not supported"
 
+    # errors or warning messages for processing image
+    conv <- "image in 'file' is non-binary : non-zero entries changed to ones"
     # attempt to load image, base on file extension
     ext <- tolower(file_ext(file))
     img <- switch(ext,
@@ -75,10 +77,13 @@ read.image <- function(file, invert = FALSE)
         }
     }
 
+    binary.flag <- !is.binary(img)
+
     # binary image check
-    if (!is.binary(img))
+    if (binary.flag)
     {
-        stop("image in 'file' is non-binary")
+        img <- convert.to.binary(img, value = 0)
+        warning(conv)
     }
 
     # empty matrix check
